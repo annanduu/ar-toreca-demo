@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ARトレカ - デモ</title>
+    <script src="https://unpkg.com/aframe@1.2.0/dist/aframe.min.js"></script>
+    <script src="https://unpkg.com/mind-ar/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+      body { margin: 0; overflow: hidden; }
+      #example-video { width: 100%; }
+    </style>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: mindar/test-target.mind; autoStart: true;" embedded>
+      <a-assets></a-assets>
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane position="0 0 0" width="1" height="0.6" material="shader: html; target: #video-container"></a-plane>
+      </a-entity>
+    </a-scene>
+
+    <!-- 埋め込むYouTube動画 -->
+    <div id="video-container" style="display: none;">
+      <iframe id="example-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </body>
+</html>
